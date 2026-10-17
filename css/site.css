@@ -121,20 +121,20 @@ h1,h2,h3{color:var(--navy);text-wrap:balance}
 .crumbs a:hover{text-decoration:underline}
 
 .phero{padding:40px 0 80px}
-.phero__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
+.phero__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
 .phero__copy{display:flex;flex-direction:column;gap:20px;min-width:0}
 .phero__copy .eyebrow{margin:0}
 .phero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
 .phero__facts{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .phero__facts li{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--rule);font-size:14px;font-weight:600;color:var(--navy)}
 .phero__facts svg{width:16px;height:16px;color:var(--teal);flex:none}
-.phero__media{position:relative;justify-self:center;width:100%;max-width:460px}
+.phero__media{position:relative;justify-self:center;width:100%;max-width:600px}
 .phero__media::before{content:"";position:absolute;inset:28px -18px -18px 28px;border-radius:24px;background:var(--sky);opacity:.55}
 .phero__img{position:relative;border-radius:22px;background:#d9e8ee center/cover no-repeat;box-shadow:0 18px 44px rgba(27,37,82,.18)}
-.phero__badge{position:absolute;left:-14px;bottom:24px;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:0 12px 30px rgba(27,37,82,.16);max-width:260px}
-.phero__badge b{display:block;font:800 1.05rem/1.25 var(--serif);color:var(--navy)}
-.phero__badge span{font-size:13px;line-height:1.4;color:var(--slate)}
-@media (max-width:900px){.phero__grid{grid-template-columns:1fr;gap:44px}.phero__media{max-width:420px}.phero{padding:28px 0 64px}}
+.phero__badge{position:absolute;left:-14px;bottom:-26px;background:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 12px 30px rgba(27,37,82,.16);max-width:230px}
+.phero__badge b{display:block;font:800 .95rem/1.25 var(--serif);color:var(--navy)}
+.phero__badge span{display:block;margin-top:2px;font-size:12px;line-height:1.35;color:var(--slate)}
+@media (max-width:900px){.phero__grid{grid-template-columns:1fr;gap:44px}.phero__media{max-width:560px}.phero{padding:28px 0 64px}}
 @media (max-width:520px){.phero__badge{left:10px}.phero__cta .btn{flex:1 1 100%}}
 
 .prose{max-width:46em}

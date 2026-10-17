@@ -1,0 +1,56 @@
+/* Apple-style finish for Bemis Family Dental. Same fonts and colors; calmer surfaces,
+   frosted header, softer cards, sentence-case labels, more breathing room. Loaded after site.css. */
+:root{--paper:#F5F6F8;--rule:#E6EBF0;--glass:rgba(255,255,255,.72);--lift:0 1px 2px rgba(27,37,82,.04),0 10px 30px rgba(27,37,82,.07);--lift-hover:0 2px 4px rgba(27,37,82,.05),0 18px 44px rgba(27,37,82,.12)}
+body{background:var(--paper);-webkit-font-smoothing:antialiased}
+
+/* frosted header */
+html body .hdr{background:var(--glass)!important;-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(27,37,82,.06)!important}
+html body .nav>a,html body .nav__btn{font-weight:500!important;border-radius:999px!important}
+html body .nav>a[aria-current="page"]{box-shadow:none!important;background:rgba(38,51,108,.07)}
+html body .mega{border:0!important;border-radius:22px!important;box-shadow:var(--lift-hover)!important;background:rgba(255,255,255,.9)!important;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+
+/* buttons: solid primary, tinted secondary (no outlines) */
+html body .btn,html body .bfd-btn{transition:transform .2s ease,background .2s ease,box-shadow .2s ease!important}
+html body .btn:hover,html body .bfd-btn:hover{transform:translateY(-1px)}
+html body .btn--ghost,html body [class*="bfd-btn--ghost"],html body [class*="bfd-btn--line"],html body [class*="bfd-btn--outline"]:not([class*="light"]){background:rgba(38,51,108,.07)!important;border-color:transparent!important;color:var(--navy)!important}
+html body .btn--ghost:hover,html body [class*="bfd-btn--ghost"]:hover{background:rgba(38,51,108,.13)!important;color:var(--navy)!important}
+html body .btn--primary,html body [class*="bfd-btn--primary"]{box-shadow:0 6px 18px rgba(38,51,108,.22)}
+
+/* labels: sentence case, no wide tracking */
+html body .eyebrow,html body [class*="__eyebrow"]{text-transform:none!important;letter-spacing:0!important;font-size:15px!important;font-weight:600!important;color:var(--teal)!important}
+
+/* headings a touch tighter */
+html body .h1,html body .h2,html body [class*="bfd-"] h1,html body [class*="bfd-"] h2{letter-spacing:-.02em!important}
+
+/* surfaces */
+html body .sec{padding:104px 0}
+html body .sec--white{border:0!important}
+html body .card,html body .steps li,html body [class*="__card"],html body .quote,html body .loc__card,html body [class*="bfd-loc__card"]{border:0!important;border-radius:24px!important;box-shadow:var(--lift)!important;transition:transform .25s ease,box-shadow .25s ease}
+html body a.card:hover,html body a[class*="__card"]:hover{transform:translateY(-3px);box-shadow:var(--lift-hover)!important}
+html body .phero__facts li,html body [class*="__facts"] li{border:0!important;background:rgba(255,255,255,.85)!important;box-shadow:0 1px 2px rgba(27,37,82,.06)}
+
+/* photos: larger radius, no offset color block */
+html body .phero__img,html body [class*="__photo"],html body [class*="bfd-"] img,html body .media__img{border-radius:28px!important}
+html body .phero__media::before,html body [class*="bfd-hero__media"]::before{display:none!important}
+html body .phero__badge,html body [class*="bfd-hero__badge"]{border-radius:16px!important;background:rgba(255,255,255,.82)!important;color:var(--navy)!important;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:var(--lift)!important}
+html body [class*="bfd-hero__badge"] *{color:var(--navy)!important}
+
+/* FAQ as soft grouped list */
+html body details{transition:background .2s}
+html body [class*="bfd-faq__list"],html body .faq{background:#fff;border-radius:24px;padding:6px 26px;box-shadow:var(--lift)}
+html body [class*="bfd-faq__list"] details:last-child,html body .faq details:last-child{border-bottom:0!important}
+
+/* mobile bar: frosted */
+html body .mbar{background:var(--glass)!important;-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:1px solid rgba(27,37,82,.06)!important}
+@media (max-width:760px){html body .sec{padding:72px 0}}
+@media (prefers-reduced-motion:reduce){html body .btn:hover,html body .bfd-btn:hover,html body a.card:hover,html body a[class*="__card"]:hover{transform:none}}
+
+/* home-page sections */
+html body [class*="bfd-btn--ghost"]{background:rgba(38,51,108,.07)!important;border-color:transparent!important;color:#26336C!important}
+html body [class*="bfd-btn--ghost"]:hover{background:rgba(38,51,108,.13)!important}
+html body .bfd-hero__photo{border-radius:30px!important;box-shadow:0 30px 70px rgba(27,37,82,.18)!important}
+html body .bfd-svc__card{border:0!important;border-radius:24px!important;box-shadow:var(--lift)!important;padding:26px 24px!important}
+html body .bfd-svc__card:hover{transform:translateY(-3px);box-shadow:var(--lift-hover)!important}
+html body .bfd-svc__cat{text-transform:none!important;letter-spacing:0!important;font-size:13px!important}
+html body [class*="bfd-"] [class*="card"],html body [class*="bfd-new__pay"],html body [class*="bfd-loc__card"]{border:0!important;border-radius:24px!important;box-shadow:var(--lift)!important}
+html body [class*="bfd-"] h2{letter-spacing:-.02em!important}

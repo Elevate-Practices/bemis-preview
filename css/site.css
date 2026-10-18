@@ -283,7 +283,7 @@ main p a:not([class]):not([style]),main .checks li a:not([class]){padding:12.5px
 .bfd-hero.bfd-hero--video{position:relative;overflow:hidden;isolation:isolate;background:#1B2552 url('/video/banner-poster.jpg') center/cover no-repeat}
 .bfd-hero.bfd-hero--video .bfd-hero__bg{position:absolute;inset:0;z-index:-2}
 .bfd-hero.bfd-hero--video .bfd-hero__video{width:100%;height:100%;object-fit:cover;display:block}
-.bfd-hero--video::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(27,37,82,.93) 0%,rgba(27,37,82,.84) 50%,rgba(27,37,82,.6) 100%)}
+.bfd-hero--video::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(27,37,82,.9) 0%,rgba(27,37,82,.78) 50%,rgba(27,37,82,.5) 100%)}
 .bfd-hero.bfd-hero--video .bfd-hero__grid{position:relative}
 .bfd-hero.bfd-hero--video h1{color:#fff!important}
 .bfd-hero.bfd-hero--video .bfd-hero__eyebrow{color:#84CAD8!important}
@@ -298,4 +298,4 @@ main p a:not([class]):not([style]),main .checks li a:not([class]){padding:12.5px
 .bfd-hero__pause svg{width:16px;height:16px;fill:currentColor}
 .bfd-hero__pause.is-paused svg path{d:path("M8 5v14l11-7z")}
 .bfd-hero__pause:focus-visible{outline:3px solid #84CAD8;outline-offset:3px}
-@media (max-width:860px){.bfd-hero--video::before{background:rgba(27,37,82,.86)}}
+@media (max-width:860px){.bfd-hero--video::before{background:linear-gradient(180deg,rgba(27,37,82,.88) 0%,rgba(27,37,82,.74) 100%)}}

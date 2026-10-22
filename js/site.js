@@ -30,3 +30,37 @@
     matchMedia('(min-width:1061px)').addEventListener('change', function (m) { if (m.matches) setM(false); });
   }
 })();
+
+/* Smooth scroll-in for photos and cards (skipped for reduced-motion visitors) */
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = document.querySelectorAll('.bfd-svc__grid > li, .bfd-doc__fig, .bfd-new__photo, .bfd-team li, .bfd-vid__grid > li, .bfd-loc__card');
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+  Array.prototype.forEach.call(els, function (el) {
+    var i = Array.prototype.indexOf.call(el.parentNode.children, el) % 4;
+    el.setAttribute('data-reveal', '');
+    el.style.setProperty('--d', i * 80 + 'ms');
+    io.observe(el);
+  });
+  document.documentElement.classList.add('js-motion');
+})();
+
+/* Click-to-load patient videos: nothing is requested from YouTube until a visitor presses play */
+(function () {
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.bfd-vid__card');
+    if (!b) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.getAttribute('data-yt')) + '?autoplay=1&rel=0&modestbranding=1';
+    f.title = b.getAttribute('data-title') || 'Patient video';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    b.parentNode.replaceChild(f, b);
+    f.focus();
+  });
+})();

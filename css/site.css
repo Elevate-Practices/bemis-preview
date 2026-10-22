@@ -397,18 +397,18 @@ html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/im
 
 /* ---- Ken Burns: slow zoom and drift on every photo (off for reduced motion) ---- */
 .bfd-doc__photo,.bfd-new__photo,.bfd-cta__photo,.bfd-tour__photo,.phero__img{overflow:hidden;isolation:isolate}
-.bfd-doc__photo::before,.bfd-new__photo::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transform-origin:var(--kb-o,50% 50%);transform:scale(calc(1 + (var(--kb-s,1.22) - 1) * var(--kb-p,0)));will-change:transform}
+.bfd-doc__photo::before,.bfd-new__photo::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transform-origin:var(--kb-o,50% 50%);transform:scale(calc(1 + (var(--kb-s,1.36) - 1) * var(--kb-p,0)));will-change:transform}
 .bfd-doc__photo,.bfd-new__photo,.bfd-cta__photo,.bfd-tour__photo,.phero__img{position:relative}
 .bfd-cta__photo{position:absolute}
 @media (max-width:760px){.bfd-cta__photo{position:relative}}
-.bfd-new__photo{--kb-s:1.22;--kb-o:60% 20%;--kb-t:8s}
-.bfd-tour__photo{--kb-s:1.22;--kb-o:30% 50%;--kb-t:9s}
-.bfd-cta__photo{--kb-s:1.18;--kb-o:55% 0%;--kb-t:7s}
-.phero__img{--kb-s:1.22;--kb-o:50% 20%;--kb-t:8s}
+.bfd-new__photo{--kb-s:1.36;--kb-o:60% 20%;--kb-t:8s}
+.bfd-tour__photo{--kb-s:1.36;--kb-o:30% 50%;--kb-t:9s}
+.bfd-cta__photo{--kb-s:1.28;--kb-o:55% 0%;--kb-t:7s}
+.phero__img{--kb-s:1.36;--kb-o:50% 20%;--kb-t:8s}
 
 /* blog photos are <img>; JS wraps them */
 .kb-wrap{display:block;overflow:hidden;border-radius:22px;margin:28px 0;line-height:0}
-.kb-wrap .post__img{margin:0!important;border-radius:0!important;display:block;transform-origin:50% 20%;transform:scale(calc(1 + .2 * var(--kb-p,0)));will-change:transform}
+.kb-wrap .post__img{margin:0!important;border-radius:0!important;display:block;transform-origin:50% 20%;transform:scale(calc(1 + .3 * var(--kb-p,0)));will-change:transform}
 @media (prefers-reduced-motion:reduce){
   .bfd-doc__photo::before,.bfd-new__photo::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before,.kb-wrap .post__img{transform:none!important}
 }
@@ -422,5 +422,5 @@ html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/im
 }
 
 /* Team photo: bigger (7/12 of the row), shows everyone, slow zoom-in that holds */
-html body .bfd-doc__photo,.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{aspect-ratio:1.9/1!important;background-position:50% 30%!important;--kb-s:1.1;--kb-o:50% 40%}
+html body .bfd-doc__photo,.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{aspect-ratio:1.9/1!important;background-position:50% 30%!important;--kb-s:1.16;--kb-o:50% 40%}
 @media (min-width:1001px){.bfd-doc__in{grid-template-columns:minmax(0,5fr) minmax(0,7fr)!important;gap:48px}}

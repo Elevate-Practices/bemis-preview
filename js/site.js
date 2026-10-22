@@ -88,7 +88,7 @@
     els.forEach(function (el) {
       var r = el.getBoundingClientRect();
       if (r.bottom < -50 || r.top > vh + 50) return;
-      var p = (vh - r.top) / (vh * 0.8);
+      var p = (vh - r.top) / (vh + r.height);
       el.style.setProperty('--kb-p', Math.max(0, Math.min(1, p)).toFixed(3));
     });
   }

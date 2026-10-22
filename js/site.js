@@ -64,3 +64,14 @@
     f.focus();
   });
 })();
+
+/* Ken Burns for blog <img> photos: wrap so the zoom stays inside rounded corners */
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  Array.prototype.forEach.call(document.querySelectorAll('img.post__img'), function (img) {
+    var w = document.createElement('span');
+    w.className = 'kb-wrap';
+    img.parentNode.insertBefore(w, img);
+    w.appendChild(img);
+  });
+})();

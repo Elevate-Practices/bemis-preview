@@ -379,40 +379,39 @@ main p a:not([class]):not([style]),main .checks li a:not([class]){padding:12.5px
 .bfd-cta__photo{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:min(320px,34%);aspect-ratio:885/828;border-radius:22px;background:#EAF5F8 url('/images/bemis-dr-nathaniel-bemis.webp') center/cover no-repeat;box-shadow:0 22px 48px rgba(0,0,0,.28)}
 @media (max-width:760px){.bfd-cta__photo{position:relative;right:auto;top:auto;transform:none;width:100%;max-width:340px;margin-top:14px}}
 
-/* ---- Team photo: much larger ---- */
-.bfd-doc__in{grid-template-columns:minmax(0,1fr)!important}
-.bfd-doc__fig{order:-1!important;width:min(1400px,calc(100vw - 40px));justify-self:center}
-.bfd-doc__photo{border-radius:24px!important}
-@media (max-width:1000px){.bfd-doc__fig{width:100%}}
+/* ---- Team photo: half of the Meet-your-dentist row ---- */
+html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/images/bemis-dr-bemis-and-team-2x.webp')!important}
 
-/* ---- Waiting-room photo band ---- */
-.bfd-tour{--bfd-navy:#26336C;--bfd-teal:#4E7279;--bfd-slate:#435262;--bfd-sans:"Open Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--bfd-serif:"Nanum Myeongjo",Georgia,serif;
-  margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;width:auto!important;background:#fff;font-family:var(--bfd-sans);box-sizing:border-box;padding-top:88px}
-.bfd-tour__head{max-width:1180px;margin:0 auto;padding:0 20px 32px}
-.bfd-tour__eyebrow{font:600 13px/1.4 var(--bfd-sans)!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--bfd-teal)!important;margin:0 0 12px!important}
-.bfd-tour h2{font-family:var(--bfd-serif)!important;font-weight:800!important;font-size:clamp(1.75rem,3vw,2.5rem)!important;line-height:1.18!important;color:var(--bfd-navy)!important;margin:0 0 12px!important;text-transform:none!important;letter-spacing:-.01em!important;text-wrap:balance}
-.bfd-tour__head p:last-child{font-size:17px!important;line-height:1.65!important;margin:0!important;color:var(--bfd-slate)!important}
-.bfd-tour__photo{width:100%;aspect-ratio:2232/972;max-height:680px;background:#d9e3e8 url('/images/bemis-waiting-room.webp') center/cover no-repeat}
-@media (max-width:700px){.bfd-tour{padding-top:64px}.bfd-tour__photo{aspect-ratio:4/3}}
+/* ---- Waiting-room photo band: photo under a dark translucent overlay, heading on top ---- */
+.bfd-tour{--bfd-sky:#84CAD8;--bfd-sans:"Open Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;--bfd-serif:"Nanum Myeongjo",Georgia,serif;
+  position:relative;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;width:auto!important;background:#1B2552;font-family:var(--bfd-sans);box-sizing:border-box;overflow:hidden}
+.bfd-tour::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(27,37,82,.86) 0%,rgba(27,37,82,.62) 55%,rgba(27,37,82,.42) 100%);pointer-events:none}
+.bfd-tour__photo{width:100%;height:clamp(360px,36vw,500px);background:#1B2552 url('/images/bemis-waiting-room.webp') center/cover no-repeat}
+.bfd-tour__head{position:absolute;top:0;bottom:0;left:0;right:0;margin:0 auto;width:100%;max-width:1180px;padding:0 20px;z-index:2;display:flex;flex-direction:column;justify-content:center}
+.bfd-tour__eyebrow{font:600 13px/1.4 var(--bfd-sans)!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--bfd-sky)!important;margin:0 0 12px!important}
+.bfd-tour h2{font-family:var(--bfd-serif)!important;font-weight:800!important;font-size:clamp(1.75rem,3.4vw,2.8rem)!important;line-height:1.15!important;color:#fff!important;margin:0 0 14px!important;text-transform:none!important;letter-spacing:-.01em!important;max-width:24ch;text-wrap:balance}
+.bfd-tour__head p:last-child{font-size:clamp(1rem,1.4vw,1.15rem)!important;line-height:1.6!important;margin:0!important;color:#E4EAF3!important;max-width:30em}
+@media (max-width:700px){.bfd-tour__photo{height:340px}.bfd-tour::after{background:rgba(27,37,82,.68)}}
 
 /* ---- Ken Burns: slow zoom and drift on every photo (off for reduced motion) ---- */
 .bfd-doc__photo,.bfd-new__photo,.bfd-team__pic,.bfd-cta__photo,.bfd-tour__photo,.phero__img{overflow:hidden;isolation:isolate}
-.bfd-doc__photo::before,.bfd-new__photo::before,.bfd-team__pic::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transform-origin:var(--kb-o,50% 50%);animation:bfd-kb var(--kb-t,28s) ease-in-out infinite alternate;will-change:transform}
+.bfd-doc__photo::before,.bfd-new__photo::before,.bfd-team__pic::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transform-origin:var(--kb-o,50% 50%);animation:bfd-kb var(--kb-t,12s) ease-in-out infinite alternate;will-change:transform}
 .bfd-doc__photo,.bfd-new__photo,.bfd-cta__photo,.bfd-tour__photo,.phero__img{position:relative}
 .bfd-cta__photo{position:absolute}
 @media (max-width:760px){.bfd-cta__photo{position:relative}}
 .bfd-team__pic{position:relative}
-.bfd-new__photo{--kb-x:2%;--kb-y:-1%;--kb-o:70% 40%;--kb-t:32s}
-.bfd-tour__photo{--kb-x:-3%;--kb-y:0%;--kb-o:30% 50%;--kb-t:36s}
-.bfd-cta__photo{--kb-x:1.5%;--kb-y:-2%;--kb-o:50% 30%;--kb-t:26s}
-.bfd-team li:nth-child(even) .bfd-team__pic{--kb-x:2%;--kb-y:1.5%;--kb-o:60% 40%;--kb-t:24s}
-.phero__img{--kb-t:30s}
-@keyframes bfd-kb{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.13) translate3d(var(--kb-x,-2%),var(--kb-y,-1.5%),0)}}
+.bfd-new__photo{--kb-x:4%;--kb-y:-2%;--kb-o:70% 40%;--kb-t:13s}
+.bfd-tour__photo{--kb-x:-4%;--kb-y:-1%;--kb-o:30% 50%;--kb-t:14s}
+.bfd-cta__photo{--kb-x:3%;--kb-y:-4%;--kb-o:50% 30%;--kb-t:11s}
+.bfd-team li:nth-child(even) .bfd-team__pic{--kb-x:4%;--kb-y:3%;--kb-o:60% 40%;--kb-t:10s}
+.phero__img{--kb-t:13s}
+.bfd-doc__photo{--kb-x:-4%;--kb-y:-2%;--kb-o:40% 40%;--kb-t:13s}
+@keyframes bfd-kb{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.28) translate3d(var(--kb-x,-4%),var(--kb-y,-3%),0)}}
 /* blog photos are <img>; JS wraps them */
 .kb-wrap{display:block;overflow:hidden;border-radius:22px;margin:28px 0;line-height:0}
-.kb-wrap .post__img{margin:0!important;border-radius:0!important;display:block;transform-origin:50% 40%;animation:bfd-kb-img 30s ease-in-out infinite alternate;will-change:transform}
-@keyframes bfd-kb-img{from{transform:scale(1)}to{transform:scale(1.12) translate3d(-1.5%,-1%,0)}}
+.kb-wrap .post__img{margin:0!important;border-radius:0!important;display:block;transform-origin:50% 40%;animation:bfd-kb-img 13s ease-in-out infinite alternate;will-change:transform}
+@keyframes bfd-kb-img{from{transform:scale(1)}to{transform:scale(1.25) translate3d(-3%,-2%,0)}}
 @media (prefers-reduced-motion:reduce){
   .bfd-doc__photo::before,.bfd-new__photo::before,.bfd-team__pic::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before,.kb-wrap .post__img{animation:none!important}
 }
-.bfd-doc__fig figcaption{text-align:center}
+

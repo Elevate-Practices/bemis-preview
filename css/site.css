@@ -397,20 +397,22 @@ html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/im
 
 /* ---- Ken Burns: slow zoom and drift on every photo (off for reduced motion) ---- */
 .bfd-doc__photo,.bfd-new__photo,.bfd-cta__photo,.bfd-tour__photo,.phero__img{overflow:hidden;isolation:isolate}
-.bfd-doc__photo::before,.bfd-new__photo::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transform-origin:var(--kb-o,50% 50%);animation:bfd-kb var(--kb-t,12s) ease-in-out infinite alternate;will-change:transform}
+.bfd-doc__photo::before,.bfd-new__photo::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transform-origin:var(--kb-o,50% 50%);animation:bfd-kb var(--kb-t,8s) cubic-bezier(.25,.6,.3,1) 1 forwards paused;will-change:transform}
 .bfd-doc__photo,.bfd-new__photo,.bfd-cta__photo,.bfd-tour__photo,.phero__img{position:relative}
 .bfd-cta__photo{position:absolute}
 @media (max-width:760px){.bfd-cta__photo{position:relative}}
-.bfd-new__photo{--kb-x:3%;--kb-y:0%;--kb-o:60% 20%;--kb-t:13s}
-.bfd-tour__photo{--kb-x:-4%;--kb-y:-1%;--kb-o:30% 50%;--kb-t:14s}
-.bfd-cta__photo{--kb-x:0%;--kb-y:0%;--kb-o:55% 0%;--kb-t:11s}
-.phero__img{--kb-x:-3%;--kb-y:0%;--kb-o:50% 15%;--kb-t:13s}
-.bfd-doc__photo{--kb-x:-3%;--kb-y:0%;--kb-o:50% 0%;--kb-t:13s}
-@keyframes bfd-kb{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.28) translate3d(var(--kb-x,-4%),var(--kb-y,-3%),0)}}
+.bfd-new__photo{--kb-s:1.12;--kb-o:60% 20%;--kb-t:8s}
+.bfd-tour__photo{--kb-s:1.12;--kb-o:30% 50%;--kb-t:9s}
+.bfd-cta__photo{--kb-s:1.1;--kb-o:55% 0%;--kb-t:7s}
+.phero__img{--kb-s:1.12;--kb-o:50% 20%;--kb-t:8s}
+
+@keyframes bfd-kb{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(var(--kb-s,1.14)) translate3d(var(--kb-x,0%),var(--kb-y,0%),0)}}
+.bfd-doc__photo.kb-go::before,.bfd-new__photo.kb-go::before,.bfd-cta__photo.kb-go::before,.bfd-tour__photo.kb-go::before,.phero__img.kb-go::before{animation-play-state:running}
 /* blog photos are <img>; JS wraps them */
 .kb-wrap{display:block;overflow:hidden;border-radius:22px;margin:28px 0;line-height:0}
-.kb-wrap .post__img{margin:0!important;border-radius:0!important;display:block;transform-origin:50% 20%;animation:bfd-kb-img 13s ease-in-out infinite alternate;will-change:transform}
-@keyframes bfd-kb-img{from{transform:scale(1)}to{transform:scale(1.25) translate3d(-3%,0,0)}}
+.kb-wrap .post__img{margin:0!important;border-radius:0!important;display:block;transform-origin:50% 20%;animation:bfd-kb-img 8s cubic-bezier(.25,.6,.3,1) 1 forwards paused;will-change:transform}
+.kb-wrap .post__img.kb-go{animation-play-state:running}
+@keyframes bfd-kb-img{from{transform:scale(1)}to{transform:scale(1.12)}}
 @media (prefers-reduced-motion:reduce){
   .bfd-doc__photo::before,.bfd-new__photo::before,.bfd-cta__photo::before,.bfd-tour__photo::before,.phero__img::before,.kb-wrap .post__img{animation:none!important}
 }
@@ -423,7 +425,6 @@ html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/im
   .phero__grid:has(.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]) .phero__media{max-width:none}
 }
 
-/* Team photo: taller crop (like the old site) instead of a thin wide strip. Same pixels, less width shown. */
-html body .bfd-doc__photo,.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{aspect-ratio:1.55/1!important;background-position:50% 20%!important}
-.bfd-doc__photo{--kb-o:30% 0%;--kb-x:0%}
-.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{--kb-o:30% 0%;--kb-x:0%}
+/* Team photo: bigger (7/12 of the row), shows everyone, slow zoom-in that holds */
+html body .bfd-doc__photo,.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{aspect-ratio:1.9/1!important;background-position:50% 30%!important;--kb-s:1.05;--kb-o:50% 40%;--kb-t:9s}
+@media (min-width:1001px){.bfd-doc__in{grid-template-columns:minmax(0,5fr) minmax(0,7fr)!important;gap:48px}}

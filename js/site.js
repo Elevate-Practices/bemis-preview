@@ -75,3 +75,12 @@
     w.appendChild(img);
   });
 })();
+
+/* Start each photo's one-time zoom when it scrolls into view */
+(function () {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('kb-go'); io.unobserve(e.target); } });
+  }, { threshold: 0.3 });
+  Array.prototype.forEach.call(document.querySelectorAll('.bfd-doc__photo, .bfd-new__photo, .bfd-cta__photo, .bfd-tour__photo, .phero__img, .kb-wrap .post__img'), function (el) { io.observe(el); });
+})();

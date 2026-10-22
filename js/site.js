@@ -76,11 +76,24 @@
   });
 })();
 
-/* Start each photo's one-time zoom when it scrolls into view */
+/* Scroll-linked zoom: each photo zooms in as it travels up the screen and eases back if you scroll up */
 (function () {
-  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('kb-go'); io.unobserve(e.target); } });
-  }, { threshold: 0.3 });
-  Array.prototype.forEach.call(document.querySelectorAll('.bfd-doc__photo, .bfd-new__photo, .bfd-cta__photo, .bfd-tour__photo, .phero__img, .kb-wrap .post__img'), function (el) { io.observe(el); });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll('.bfd-doc__photo, .bfd-new__photo, .bfd-cta__photo, .bfd-tour__photo, .phero__img, .kb-wrap .post__img'));
+  if (!els.length) return;
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight || 800;
+    els.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.bottom < -50 || r.top > vh + 50) return;
+      var p = (vh - r.top) / (vh * 0.8);
+      el.style.setProperty('--kb-p', Math.max(0, Math.min(1, p)).toFixed(3));
+    });
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', req, { passive: true });
+  window.addEventListener('resize', req);
+  update();
 })();

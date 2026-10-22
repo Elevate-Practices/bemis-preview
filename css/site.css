@@ -422,3 +422,8 @@ html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/im
   .phero__grid:has(.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]){grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px}
   .phero__grid:has(.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]) .phero__media{max-width:none}
 }
+
+/* Team photo: taller crop (like the old site) instead of a thin wide strip. Same pixels, less width shown. */
+html body .bfd-doc__photo,.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{aspect-ratio:1.55/1!important;background-position:50% 20%!important}
+.bfd-doc__photo{--kb-o:30% 0%;--kb-x:0%}
+.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{--kb-o:30% 0%;--kb-x:0%}

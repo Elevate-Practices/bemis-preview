@@ -424,3 +424,22 @@ html body .bfd-doc__photo{border-radius:20px!important;background-image:url('/im
 /* Team photo: bigger (7/12 of the row), shows everyone, slow zoom-in that holds */
 html body .bfd-doc__photo,.phero__img[aria-label^="Dr. Bemis with the Bemis Family Dental team"]{aspect-ratio:1.9/1!important;background-position:50% 30%!important;--kb-s:1.16;--kb-o:50% 40%}
 @media (min-width:1001px){.bfd-doc__in{grid-template-columns:minmax(0,5fr) minmax(0,7fr)!important;gap:48px}}
+
+/* post-op pages */
+.postop-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.postop-chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px;padding:0;list-style:none}
+.postop-chips a{display:inline-block;padding:8px 16px;border:1px solid var(--rule);border-radius:999px;background:#fff;color:var(--navy);font-weight:600;font-size:.92rem;text-decoration:none}
+.postop-chips a:hover{border-color:var(--navy)}
+.postop-every{margin-bottom:20px;background:var(--sky-tint)}
+.postop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.postop-card{scroll-margin-top:calc(var(--hdr) + 16px)}
+.postop-card h2{margin-top:0}
+.postop-learn{margin:.6em 0 0}
+.postop-call{margin-top:24px;padding:26px 30px;border-radius:18px;background:#fff;border:1px solid var(--rule);border-left:6px solid var(--gold)}
+.postop-call h2{margin:0 0 .5em}
+.postop-call ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.postop-urgent{margin:1em 0 0}
+.postop-also{margin-top:20px}
+.after-care .postop-btns{margin-top:16px}
+@media(max-width:760px){.postop-grid{grid-template-columns:1fr}}
+@media print{.hdr,.ftr,.mbar,.no-print,.crumbs,.bfd-cta,.pvbar{display:none!important}.card,.postop-call{box-shadow:none;break-inside:avoid;border:1px solid #bbb}.sec{padding:14px 0}}

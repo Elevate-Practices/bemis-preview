@@ -149,7 +149,7 @@ body{background:transparent!important;padding:0!important;margin:0!important}
 .wrap>header,.wrap>details{display:none!important}
 .controls{padding:0 4px 2px}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5YPCG07WBW"></script>
+<script type="text/elevate-delay" data-delay-src="https://www.googletagmanager.com/gtag/js?id=G-5YPCG07WBW" ></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5YPCG07WBW');
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
 if(h.indexOf('tel:')===0){gtag('event','phone_call_click',{link_url:h,transport_type:'beacon'});}
@@ -389,5 +389,10 @@ else if(h==='/book/'||h.indexOf('book.modento.io')>-1){gtag('event','book_online
 })();
 </script>
 
-</body>
+<script data-elevate-perf>(function(){var done=false;function go(){if(done)return;done=true;
+document.querySelectorAll('script[type="text/elevate-delay"]').forEach(function(o){var s=document.createElement('script');
+for(var i=0;i<o.attributes.length;i++){var a=o.attributes[i];if(a.name==='type')continue;s.setAttribute(a.name==='data-delay-src'?'src':a.name,a.value)}
+s.async=false;o.parentNode.replaceChild(s,o)})}
+['scroll','pointerdown','keydown','touchstart','mousemove'].forEach(function(e){addEventListener(e,go,{once:true,passive:true})});
+addEventListener('load',function(){setTimeout(go,6000)})})();</script></body>
 </html>

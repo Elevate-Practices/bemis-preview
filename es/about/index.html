@@ -137,12 +137,17 @@ else if(h==='/book/'||h.indexOf('book.modento.io')>-1){gtag('event','book_online
 .bfd-team a:focus-visible{outline:3px solid var(--bfd-sky);outline-offset:3px}
 @media (max-width:1000px){.bfd-team ul{gap:10px}.bfd-team__txt{padding:10px 10px 12px}.bfd-team li b{font-size:15.5px}.bfd-team li span{font-size:12.5px}.bfd-team__in{padding:64px 20px}}
 @media (max-width:640px){.bfd-team ul{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px!important;margin-right:-20px!important;padding-right:20px!important}.bfd-team li{flex:0 0 58%;scroll-snap-align:start}.bfd-team li b{font-size:17px}}
-.bfd-team__bios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:28px}
-.bfd-bio{background:#fff;border-radius:16px;padding:28px 28px 24px;display:flex;flex-direction:column;gap:12px}
-.bfd-team .bfd-bio h3{font-family:var(--bfd-serif)!important;font-weight:800!important;font-size:22px!important;line-height:1.2!important;color:var(--bfd-navy)!important;margin:0!important;text-transform:none!important}
+.bfd-team__bios{display:flex;flex-direction:column;gap:20px;margin:0 0 20px}
+.bfd-bio{background:#fff;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr)}
+.bfd-bio__pic{min-height:100%;background:#d9e8ee center top/cover no-repeat}
+.bfd-bio__body{padding:32px 36px 28px;display:flex;flex-direction:column;gap:12px;justify-content:center}
+.bfd-team .bfd-bio h3{font-family:var(--bfd-serif)!important;font-weight:800!important;font-size:26px!important;line-height:1.2!important;color:var(--bfd-navy)!important;margin:0!important;text-transform:none!important}
 .bfd-team .bfd-bio__role{font-size:13.5px!important;letter-spacing:.08em;text-transform:uppercase;color:var(--bfd-teal)!important;margin:-6px 0 2px!important;font-weight:600}
 .bfd-team .bfd-bio p{font-size:16px!important;line-height:1.65!important;margin:0!important;color:var(--bfd-slate)!important}
-@media (max-width:800px){.bfd-team__bios{grid-template-columns:1fr}.bfd-bio{padding:22px 20px}}
+.bfd-team ul.bfd-team__rest{grid-template-columns:repeat(3,minmax(0,1fr))}
+.bfd-team ul.bfd-team__rest .bfd-team__pic{aspect-ratio:4/3}
+@media (max-width:800px){.bfd-bio{grid-template-columns:1fr}.bfd-bio__pic{aspect-ratio:4/3;min-height:0}.bfd-bio__body{padding:22px 20px 24px}}
+@media (max-width:640px){.bfd-team ul.bfd-team__rest{display:flex}}
 </style>
 <section aria-labelledby="bfd-team-title" class="bfd-team">
 <div class="bfd-team__in">
@@ -153,29 +158,32 @@ else if(h==='/book/'||h.indexOf('book.modento.io')>-1){gtag('event','book_online
 </div>
 <p>Varios miembros de nuestro equipo tienen más de una década trabajando en odontología, y se toman el tiempo para conocerle.</p>
 </div>
-<ul>
-<li><div aria-label="Sarah, directora de operaciones en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-sarah.webp')"></div><div class="bfd-team__txt"><b>Sarah</b><span>Directora de operaciones</span></div></li>
-<li><div aria-label="Jacqulyn, gerente del consultorio en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-jacqulyn.webp')"></div><div class="bfd-team__txt"><b>Jacqulyn</b><span>Gerente del consultorio</span></div></li>
-<li><div aria-label="Sidney, higienista dental registrada en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-sidney.webp')"></div><div class="bfd-team__txt"><b>Sidney</b><span>Higienista dental registrada</span></div></li>
-<li><div aria-label="Amy, asistente dental registrada en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-amy.webp')"></div><div class="bfd-team__txt"><b>Amy</b><span>Asistente dental registrada</span></div></li>
-<li><div aria-label="Ava, asistente dental registrada en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-ava.webp')"></div><div class="bfd-team__txt"><b>Ava</b><span>Asistente dental registrada</span></div></li>
-</ul>
     <div class="bfd-team__bios">
       <article class="bfd-bio">
+        <div class="bfd-bio__pic" role="img" aria-label="Sarah, directora de operaciones en Bemis Family Dental" style="background-image:url('/images/bemis-team-sarah.webp')"></div>
+        <div class="bfd-bio__body">
         <h3>Sarah</h3>
         <p class="bfd-bio__role">Directora de operaciones</p>
         <p>Sarah trabaja en el campo dental desde 2009. Aunque disfruta el lado clínico, su verdadera pasión es el área administrativa de la odontología. Ha dedicado tiempo a aprender y mejorar sus conocimientos sobre los seguros dentales y sobre cómo ayudar a los pacientes a aprovechar sus beneficios. Está convencida de que el éxito del consultorio refleja directamente el talento y la cultura del equipo, así como del doctor en quien los pacientes han depositado su confianza. Cree en la atención que el Dr. Bemis brinda a sus pacientes y se siente agradecida de formar parte de un equipo tan estupendo.</p>
         <p>Sarah se unió a nuestra familia dental en 2018. Dirigía un consultorio más grande en Plano, pero quería mudarse a Fort Worth. Al conocer a todos, supo que nuestro consultorio era justo lo que buscaba. Junto con su hija adolescente, Alyssa, se mudó a Fort Worth. Cuando no está conquistando el arte de criar a una adolescente, disfruta de ver películas, jugar videojuegos en PC e ir a ferias renacentistas.</p>
+        </div>
       </article>
       <article class="bfd-bio">
+        <div class="bfd-bio__pic" role="img" aria-label="Sidney, higienista dental registrada en Bemis Family Dental" style="background-image:url('/images/bemis-team-sidney.webp')"></div>
+        <div class="bfd-bio__body">
         <h3>Sidney</h3>
         <p class="bfd-bio__role">Higienista dental registrada</p>
         <p>Sidney creció en el centro de Indiana y, al terminar la preparatoria, se mudó a Hawái y después al área metropolitana de Washington, D. C. Estudió en Northern Virginia Community College y se graduó en 2011 como higienista dental registrada. Se mudó a Texas en 2015 para estar más cerca de su familia, y se enamoró del clima soleado, pero no de las hormigas de fuego. Ha trabajado en Hurst y Fort Worth, y encontró su consultorio ideal en Bemis Family Dental.</p>
         <p>Sidney ha trabajado principalmente en pequeños consultorios dentales familiares y tuvo el placer de trabajar varios años en un consultorio dental para personas con necesidades especiales antes de llegar a Bemis Family Dental. Es una higienista hábil y amable, y se siente cómoda trabajando con todo tipo de pacientes. Le apasiona un enfoque holístico de la odontología: tratar a la persona completa, no solo los dientes, y cuidar cómo las enfermedades inflamatorias y sistémicas pueden afectar la salud general y bucal.</p>
         <p>Cuando no está en el consultorio, disfruta pasar tiempo con su hija Ava, trabajar con clientes como entrenadora personal y coach de nutrición certificada, hacer pesas en el gimnasio y viajar.</p>
+        </div>
       </article>
     </div>
-
+    <ul class="bfd-team__rest">
+      <li><div aria-label="Jacqulyn, gerente del consultorio en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-jacqulyn.webp')"></div><div class="bfd-team__txt"><b>Jacqulyn</b><span>Gerente del consultorio</span></div></li>
+      <li><div aria-label="Amy, asistente dental registrada en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-amy.webp')"></div><div class="bfd-team__txt"><b>Amy</b><span>Asistente dental registrada</span></div></li>
+      <li><div aria-label="Ava, asistente dental registrada en Bemis Family Dental" class="bfd-team__pic" role="img" style="background-image:url('/images/bemis-team-ava.webp')"></div><div class="bfd-team__txt"><b>Ava</b><span>Asistente dental registrada</span></div></li>
+    </ul>
 </div>
 </section>
 <style>
